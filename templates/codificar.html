@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+    <h2> Codificar Mensagem</h2>
+    <div class="titulo">
+        <h2>Codificar Mensagem</h2>
+    </div>
+
+    <div class="form">
+        <form action="/codificar" method="post">
+            <label for="mensagem">Digite a imagem a ser codificada:</label>
+            <input type="text"> name="mensagem" required>
+            <label for="imagem"> Escolha a imagem (PNH):</label>
+            <input type="file" name="imagem" 
+            <input type="submit" value="Codificar">
+        </form>
+    </div>
+{% endblock %}
