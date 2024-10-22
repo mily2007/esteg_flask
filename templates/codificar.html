@@ -1,18 +1,26 @@
 {% extends 'base.html' %}
 
 {%  block content %}
-    <h2> Codificar Mensagem</h2>
     <div class="titulo">
         <h2>Codificar Mensagem</h2>
     </div>
 
     <div class="form">
-        <form action="/codificar" method="post">
+        <form action="/codificar" method="post"  enctype="multipart/form-data">
             <label for="mensagem">Digite a imagem a ser codificada:</label>
-            <input type="text"> name="mensagem" required>
-            <label for="imagem"> Escolha a imagem (PNH):</label>
-            <input type="file" name="imagem" 
+            <input type="text" name="mensagem" required> 
+            <label for="imagem"> Escolha a imagem (PNG):</label>
+            <input type="file" name="imagem"  accept="imagem/png" required>
             <input type="submit" value="Codificar">
         </form>
+    <div class="encoded_image">
+        {% if image_data %}
+            <h2>Imagem gerada com sucesso!</h2>
+            <img src="data:image/png;base64, {{image_data|b64encode }}"alt= "Imagem Codificada">
+            <br />
+            <a href="data:image/png;base64, {{image_data|b64encode }}"dowlond="{{ img_filename}}"></a>
+            <button>
+                Baixar Imagem Codificada
+            </button>
     </div>
 {% endblock %}
