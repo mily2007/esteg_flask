@@ -2,23 +2,23 @@
 
 {% block content %}
     <div class="title">
-        <h2>Codificar Mensagem</h2>
+        <h2>Decodificar Mensagem</h2>
     </div>
 
     <div class="form" id="decode-form">
         <form action="/decode" method="post" enctype="multipart/form-data">
-            <label for="imagem">Escolha a imagem (PNG):</label>
+            <label for="image">Escolha a imagem (PNG):</label>
             <input type="file" name="image" accept="image/png" required>
             <input type="submit" value="Decodificar">
         </form>
     </div>
 
-<div class="spinner" id="loading-spinner"></div>
+    <div class="spinner" id="loading-spinner"></div>
 
-    <div class="decoded_message" id="results">
+    <div class="decoded_message" id="result">
         {% if message %}
-            <h2>Mensagem Ocultar</h2>
+            <h2>Mensagem Oculta:</h2>
             <p>{{ message }}</p>
-            {% endif %}
+        {% endif %}
     </div>
 {% endblock %}

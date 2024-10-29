@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="info">
+    Aplicativo para ocultação a revelação de mensagens escondidas em imagens.<br />Escolha a opção desejada
+</div>
     <div class="options">
         <div class="encode">
             <a href="/encode">
@@ -9,13 +12,12 @@
                 </button>
             </a>
         </div>
-        <div class="decode"></div>
-    <div class="options">
         <div class="decode">
             <a href="/decode">
                 <button>
                     Decodificar Mensagem
                 </button>
             </a>
-    
+        </div>
+    </div>
 {% endblock %}
